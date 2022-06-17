@@ -1,0 +1,5 @@
+# @package _global_
+
+size: [480, 540]
+size_test: [960, 540]
+half_crop: true

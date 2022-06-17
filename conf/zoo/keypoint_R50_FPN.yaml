@@ -1,0 +1,4 @@
+# @package _global_
+
+model_zoo: "COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x.yaml"
+model_zoo_weights: "https://dl.fbaipublicfiles.com/detectron2/COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x/137849621/model_final_a6e10b.pkl"

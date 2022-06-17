@@ -1,0 +1,4 @@
+# @package _global_
+
+model_zoo: COCO-Detection/faster_rcnn_R_101_C4_3x.yaml
+model_zoo_weights: https://dl.fbaipublicfiles.com/detectron2/COCO-Detection/faster_rcnn_R_101_C4_3x/138204752/model_final_298dad.pkl

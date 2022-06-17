@@ -1,0 +1,8 @@
+# @package _global_
+
+task_name: keypoint
+num_keypoints: 17
+
+eval_task:
+  - bbox
+  - keypoints

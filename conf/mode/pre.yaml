@@ -1,0 +1,15 @@
+# @package _global_
+
+meta_dataset: "coco_2014_val"
+
+eval_only: true
+pretrained: true
+resume: false
+
+visualize: false
+
+vis:
+  count: 10
+  seed: 0
+  save: false
+  save_folder: figs/tmp

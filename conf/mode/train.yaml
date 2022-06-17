@@ -1,0 +1,5 @@
+# @package _global_
+
+eval_only: false
+pretrained: true
+resume: false

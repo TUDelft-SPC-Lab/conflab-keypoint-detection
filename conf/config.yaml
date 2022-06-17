@@ -1,0 +1,111 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - mode: test
+  - task: keypoint
+  - zoo: ${task}_R50_FPN
+  - split: none
+
+  - launcher: local
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+dataset: "conflab-dataset"
+meta_dataset: "conflab-dataset"
+
+# img_root_dir: "${env:HOME}/datasets/conflab-mm-v2/frames/videoSegments"
+img_root_dir: "${env:HOME}/datasets/conflab-mm-v2/frames_filtered"
+
+ann_dir: "${env:HOME}/datasets/conflab-mm-v2/annotations"
+
+create_coco: false
+force_register: false # NOTE fore re-register
+
+coco_json_path: "store/conflab_coco.json"
+
+split_path: ""
+coco_json_prefix: ""
+
+# whether to use small keypoint
+kp_rank: 0 # 1,2,3
+oks_std: null
+
+valid_kv_ratio: 0.05
+
+prefix_path: ""
+coco_json_path_train: "store/${prefix_path}conflab_coco_train${coco_json_prefix}${kp_rank}.json"
+coco_json_path_test: "store/${prefix_path}conflab_coco_test${coco_json_prefix}${kp_rank}.json"
+
+info_path: store/data-info.pkl
+
+test_cam:
+  - cam6 # use camera 6 as test camera
+
+train_cam:
+  - cam2
+  - cam4
+  - cam8
+
+name: "kp_base"
+output_dir: "./ckpt/${name}"
+checkpoint: null # whether to load any pretrained checkpoint
+
+train_dataset: ${dataset}_train
+test_dataset: ${dataset}_test
+
+log_dir: "logs"
+log_prefix: ""
+
+num_workers: 6
+num_classes: 1
+
+total_ann: null
+
+# eval_only: true
+# pretrained: false
+# resume: false
+# visualize: false
+# num_items: 10
+
+ref_world_size: 4
+
+batch_size: 16
+max_iters: 50000
+learning_rate: 0.02
+
+roi_thresh: 0.5
+
+size: [960, 540]
+size_test: ${size}
+
+half_crop: false # NOTE whether to use small number of data, change the `split` default
+
+# data creation
+thresh_null_kp: 0.1 # upper limit for null values: if less than 10% are null values, pick the image
+data_create_num_vis: 10
+data_plot: false
+total_im_per_vid: null
+data_plot_dir: output/plot_gt
+
+# ddp_spawn
+machine_rank: 0
+num_machines: 1
+ngpus: 1
+
+dist_url: "env://" #"tcp://127.0.0.1:3200"
+
+# ddp
+gpu: 1
+rank: 0
+world_size: 1
+accelerator: "ddp" # "ddp_spawn"
+
+seed: 0
+
+benchmark: false
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null

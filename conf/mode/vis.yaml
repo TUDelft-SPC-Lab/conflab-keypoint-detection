@@ -1,0 +1,13 @@
+# @package _global_
+
+eval_only: true
+pretrained: true
+resume: false
+
+visualize: true
+
+vis:
+  count: 10
+  seed: 0
+  save: false
+  save_folder: figs/tmp

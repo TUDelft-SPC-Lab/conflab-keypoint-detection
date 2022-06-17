@@ -1,0 +1,12 @@
+# @package _global_
+
+launcher_name: slurm
+
+ngpus: 1
+nodes: 1
+timeout: 06:00:00
+job_dir: ""
+job_name: null
+comment: ""
+mem_per_cpu: 15000
+cpus_per_task: 10
