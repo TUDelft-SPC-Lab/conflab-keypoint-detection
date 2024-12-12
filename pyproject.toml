@@ -10,8 +10,8 @@ dependencies = [
     "rich>=13.9.4",
     "torch==1.10.1+cpu",
     "tqdm>=4.67.1",
-    "numpy<2.0",
-    "pillow<10.0",
+    "numpy<2.0",  # Detectron and torch are only compatible with 1.x versions
+    "pillow<10.0",  # Detectron is only compatible with 9.x versions
     "torchvision==0.11.2+cpu",
     "parse>=1.20.2",
     "seaborn>=0.13.2",
