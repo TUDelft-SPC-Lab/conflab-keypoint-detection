@@ -1,0 +1,19 @@
+[project]
+name = "conflab-keypoint-detection"
+version = "0.1.0"
+description = "Baseline experiments for conflab dataset"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "detectron2>=0.6",
+    "opencv-python>=4.10.0.84",
+    "rich>=13.9.4",
+    "torch==1.10.1+cpu",
+    "tqdm>=4.67.1",
+    "numpy<2.0",
+    "pillow<10.0",
+    "torchvision==0.11.2+cpu",
+    "parse>=1.20.2",
+    "seaborn>=0.13.2",
+    "scikit-learn>=1.6.0",
+]
