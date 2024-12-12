@@ -6,8 +6,7 @@ import cv2
 
 import random
 from detectron2.data import DatasetCatalog, MetadataCatalog
-from data_loading.conflab_dataset import *
-from tqdm import tqdm
+from data_loading.conflab_dataset import register_conflab_dataset
 from detectron2.utils.visualizer import Visualizer
 from rich.progress import track
 

@@ -2,7 +2,6 @@ from datetime import datetime
 import logging
 import os
 from typing import List, Optional
-from detectron2.utils.env import seed_all_rng
 import numpy as np
 import cv2
 from detectron2.utils.visualizer import Visualizer
@@ -10,7 +9,6 @@ from detectron2.engine import DefaultPredictor
 from detectron2.data.catalog import Metadata
 from detectron2.data import transforms as T
 from omegaconf.dictconfig import DictConfig
-import torch
 from tqdm import tqdm
 from detectron2.utils.logger import setup_logger
 from detectron2.utils import comm
